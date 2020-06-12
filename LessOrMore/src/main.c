@@ -3,42 +3,34 @@
 #include <time.h>
 #include "libs.h"
 
-int main(int argc, char **argv, char **envv){
-  
+int main(int argc, char **argv, char **envv)
+{
+
     int newGame = 1;
-    int nombreMystere = 0 , nombreEntree = 0 , nombreCoups = 0;
-    
+    int nombreEntree = 0, nombreCoups = 0;
+
     /* On génère un nombre aléatoire */
 
     srand(time(NULL));
     int MAX = 0, MIN = 0;
-   
-   while ( MIN >= MAX){
-        printf("Veuillez choisir un nombre maximum : ");
-        scanf("%d", &MAX);
-    
-        printf("Veuillez choisir un nombre minimum : ");
-        scanf("%d", &MIN);
-   }
+    int nombreMystere = number(MAX,MIN);
 
-    nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
-    
     /* On lance la fonction jeux : */
 
     jeux(nombreMystere, nombreEntree, nombreCoups);
-    
-    printf ("\nVoulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
-    scanf("%d", &newGame);
-    
 
-    if (newGame) {
-        srand(time(NULL));
-        nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
+    printf("\nVoulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
+    scanf("%d", &newGame);
+
+    if (newGame)
+    {
+        nombreMystere = number(MAX,MIN);
         jeux(nombreMystere, nombreEntree, nombreCoups);
-        printf ("Voulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
+        printf("Voulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
         scanf("%d", &newGame);
     }
-    else {
+    else
+    {
         return 0;
     }
     return 0;

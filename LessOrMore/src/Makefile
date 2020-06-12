@@ -16,9 +16,3 @@ clean :
 
 clear :
 	clear
-
-#tar :
-#	$(RM) test
-#	tar -cvf ../Exercice1_AGUILAR.tar ../Exercice1_AGUILAR/
-#	gzip ../Exercice1_AGUILAR.tar
-#	cp ../Exercice1_AGUILAR.tar.gz /mnt/c/Users/aguil/Desktop/

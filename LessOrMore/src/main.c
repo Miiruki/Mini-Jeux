@@ -9,13 +9,9 @@ int main(int argc, char **argv, char **envv)
     int newGame = 1;
     int nombreEntree = 0, nombreCoups = 0;
 
-    /* On génère un nombre aléatoire */
-
     srand(time(NULL));
     int MAX = 0, MIN = 0;
     int nombreMystere = number(MAX,MIN);
-
-    /* On lance la fonction jeux : */
 
     jeux(nombreMystere, nombreEntree, nombreCoups);
 

@@ -9,7 +9,9 @@ void jeux(int nombreMystere, int nombreEntree, int nombreCoups)
 
         printf("\nQuel est votre choix ? : ");
         nombreCoups++;
-        scanf("%d", &nombreEntree);
+        if (scanf("%d", &nombreEntree) != 1){
+            printf("Failed to read integer \n");
+        }
         if (nombreMystere > nombreEntree)
         {
             printf("Plus grand ! \n");
@@ -27,16 +29,20 @@ void jeux(int nombreMystere, int nombreEntree, int nombreCoups)
     }
 }
 
-int number(MIN, MAX)
+int number(int MIN, int MAX)
 {
     int nombreMystere = 0;
     while (MIN >= MAX)
     {
         printf("Veuillez choisir un nombre maximum : ");
-        scanf("%d", &MAX);
+        if (scanf("%d", &MAX) != 1){
+            printf("Failed to read integer \n");
+        }
 
         printf("Veuillez choisir un nombre minimum : ");
-        scanf("%d", &MIN);
+        if (scanf("%d", &MIN) != 1) {
+            printf("Failed to read integer \n");
+        }
     }
 
     nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;

@@ -16,14 +16,18 @@ int main(int argc, char **argv, char **envv)
     jeux(nombreMystere, nombreEntree, nombreCoups);
 
     printf("\nVoulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
-    scanf("%d", &newGame);
+    if (scanf("%d", &newGame) != 1){
+        printf("Failed to read integer \n");
+    }
 
     if (newGame)
     {
         nombreMystere = number(MAX,MIN);
         jeux(nombreMystere, nombreEntree, nombreCoups);
         printf("Voulez vous rejouer ? Si oui tapez 1, si non tapez 0 : ");
-        scanf("%d", &newGame);
+        if (scanf("%d", &newGame) != 1){
+            printf("Failed to read integer \n");
+        };
     }
     else
     {
